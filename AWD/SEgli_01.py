@@ -25,7 +25,7 @@ Todo:
    http://google.github.io/styleguide/pyguide.html
 
 """
-def fib_recursive(n):
+def fib(n):
     """Implementations.
 
     Args:
@@ -47,7 +47,7 @@ def fib_recursive(n):
     elif n == 1:
         return 1
     else:
-        return fib_recursive(n-1) + fib_recursive(n-2)
+        return fib(n-1) + fib(n-2)
 
 def fib_formula(n):
     golden_ratio = (1 + math.sqrt(5)) / 2
@@ -71,42 +71,3 @@ def fib_iterative(n):
         a, b = b, a + b
         n -= 1
     return a
-
-print("Measurement start")
-elapsed = {}
-#elapsed['recursion'] = {}
-elapsed['iteration'] = {}
-elapsed['formula'] = {}
-for i in range(1000):
-    """t_start = time.time()
-    print(fib_recursive(i))
-    t_end = time.time()
-    elapsed['recursion'][i] = t_end - t_start
-    """
-    t_start = time.time()
-    #print(fib_iterative(i))
-    t_end = time.time()
-    elapsed['iteration'][i] = t_end - t_start
-
-    t_start = time.time()
-    #print(fib_formula(i))
-    t_end = time.time()
-    elapsed['formula'][i] = t_end - t_start
-
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from IPython.core.pylabtools import figsize
-
-t = np.arange(0.0, 2.0, 0.01)
-s = 1 + np.sin(2*np.pi*t)
-plt.plot(t, s)
-
-elapased_ms = pd.DataFrame(elapsed) * 1000
-elapased_ms.plot(title='time taken to compute the n-th Fibonaccis number')
-plt.ylabel('time taken (ms)')
-plt.xlabel('n')
-plt.grid(True)
-plt.savefig("test.png")
-plt.show()
-      

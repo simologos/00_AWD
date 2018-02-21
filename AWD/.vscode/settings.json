@@ -1,0 +1,18 @@
+{
+    "python.pythonPath": "C:\\Users\\Simon\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe",
+    "python.linting.enabled": false,
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        ".",
+        "-p",
+        "*test.py"
+    ],
+    "python.unitTest.unittestEnabled": false,
+    "python.unitTest.promptToConfigure": false,
+    "python.unitTest.pyTestEnabled": false,
+    "python.unitTest.nosetestsEnabled": false,
+    "code-runner.executorMap": {
+        "python": "C:\\Users\\Simon\\AppData\\Local\\Programs\\Python\\Python36-32\\python.exe" 
+    }
+}
