@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 import math
 import time
+
 """Semesterarbeit Teil 1a
 
-This module demonstrates documentation as specified by the `Google Python
-Style Guide`_. Docstrings may extend over multiple lines. Sections are created
-with a section header and a colon followed by a block of indented text.
+This file contains all Python functions implemented as part of the "Semesterarbeit Teil 1a"
 
 Example:
     Examples can be given using either the ``Example`` or ``Examples``
@@ -26,20 +25,16 @@ Todo:
 
 """
 def fib(n):
-    """Implementations.
+    """Naive implementation of the Fibonacci equasion.
 
     Args:
-        n (int): The upper limit of the range to generate, from 0 to `n` - 1.
+        n (int): Place of the Fibonacci number to calculate
 
-    Yields:
-        int: The next number in the range of 0 to `n` - 1.
 
     Examples:
-        Examples should be written in doctest format, and should illustrate how
-        to use the function.
-
-        >>> print([i for i in example_generator(4)])
-        [0, 1, 2, 3]
+        
+        >>> print(fib(5))
+        5
 
     """
     if n == 0:
@@ -71,3 +66,7 @@ def fib_iterative(n):
         a, b = b, a + b
         n -= 1
     return a
+
+def fib_recursion_count(n):
+    f = fib_iterative(n+1)
+    return 2*f-1

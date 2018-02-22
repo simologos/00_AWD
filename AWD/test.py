@@ -1,8 +1,8 @@
 
 from SEgli_01 import *
-print(fib(2))
+#print( fib( 4 ) )
 
-print(fib_formula(1000))
+print(fib_count(4))
 
 """
 import matplotlib.pyplot as plt
