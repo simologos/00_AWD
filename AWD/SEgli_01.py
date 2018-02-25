@@ -47,7 +47,12 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 
 def fib_formula(n):
-    decimal.getcontext().prec = int(n/4)
+    prec = int(n/4)
+    
+    if(prec < 10):
+        prec = 10
+
+    decimal.getcontext().prec = prec
     SQ5_d = Decimal.sqrt(Decimal(5))
     PHI_d = (Decimal(1) + SQ5_d) / Decimal(2)
     return int(((PHI_d**n)/SQ5_d) + Decimal(0.5))

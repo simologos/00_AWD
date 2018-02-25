@@ -1,7 +1,9 @@
 
 from SEgli_01 import *
-print( get_best_formula_runtime(1000000) )
-print( get_best_iteration_runtime(1000000) )
+print( fib_iterative(1000000) )
+#print(0/4)
+
+#print( get_best_iteration_runtime(1000000) )
 
 #print( get_best_recursion_runtime(25) )
 
@@ -10,7 +12,8 @@ print( get_best_iteration_runtime(1000000) )
 #print(fib_recursion_count(4))
 
 #from SEgli_01_Measurement import *
-#show_measurement_formula_vs_iterative(100000,100040)
+#show_precision_needed()
+#show_measurement_formula_vs_iterative(100000,100100)
 
 """
 import matplotlib.pyplot as plt
