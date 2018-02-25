@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import math
 import time
+import decimal
+from decimal import Decimal
 
 """Semesterarbeit Teil 1a
 
@@ -45,20 +47,10 @@ def fib(n):
         return fib(n-1) + fib(n-2)
 
 def fib_formula(n):
-    golden_ratio = (1 + math.sqrt(5)) / 2
-    val = (golden_ratio**n - (1 - golden_ratio)**n) / math.sqrt(5)
-    return int(round(val))
-
-def fib_formula_round(n):
-    return int(((1 + math.sqrt(5)) / 2) ** n / math.sqrt(5) + 0.5)
-    
-def fib_matrix(n):
-    v1, v2, v3 = 1, 1, 0    # initialise a matrix [[1,1],[1,0]]
-    for rec in bin(n)[3:]:  # perform fast exponentiation of the matrix (quickly raise it to the nth power)
-        calc = v2*v2
-        v1, v2, v3 = v1*v1+calc, (v1+v3)*v2, calc+v3*v3
-        if rec=='1':    v1, v2, v3 = v1+v2, v1, v2
-    return v2
+    decimal.getcontext().prec = int(n/4)
+    SQ5_d = Decimal.sqrt(Decimal(5))
+    PHI_d = (Decimal(1) + SQ5_d) / Decimal(2)
+    return int(((PHI_d**n)/SQ5_d) + Decimal(0.5))
 
 def fib_iterative(n):
     a, b = 0, 1
@@ -70,3 +62,34 @@ def fib_iterative(n):
 def fib_recursion_count(n):
     f = fib_iterative(n+1)
     return 2*f-1
+
+    
+def get_best_recursion_runtime(n):
+    times = []
+    for i in range(10):
+        t_start = time.process_time()
+        fib(n)
+        t_end = time.process_time()
+        times.append(t_end - t_start)
+
+    return min(times)
+
+def get_best_iteration_runtime(n):
+    times = []
+    for i in range(10):
+        t_start = time.process_time()
+        fib_iterative(n)
+        t_end = time.process_time()
+        times.append(t_end - t_start)
+
+    return min(times)
+
+def get_best_formula_runtime(n):
+    times = []
+    for i in range(10):
+        t_start = time.process_time()
+        fib_formula(n)
+        t_end = time.process_time()
+        times.append(t_end - t_start)
+
+    return min(times)
