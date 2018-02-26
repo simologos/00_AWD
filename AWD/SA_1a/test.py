@@ -1,7 +1,6 @@
 
 from SEgli_01 import *
-print( fib_iterative(1000000) )
-#print(0/4)
+print( get_best_iteration_runtime(1000000) )
 
 #print( get_best_iteration_runtime(1000000) )
 
