@@ -1,6 +1,6 @@
 
-from SEgli_01 import *
-print( get_best_iteration_runtime(1000000) )
+from SEgli_01_Fibonacci import *
+print( get_best_iteration_runtime(2) )
 
 #print( get_best_iteration_runtime(1000000) )
 
@@ -10,9 +10,9 @@ print( get_best_iteration_runtime(1000000) )
 
 #print(fib_recursion_count(4))
 
-#from SEgli_01_Measurement import *
-#show_precision_needed()
-#show_measurement_formula_vs_iterative(100000,100100)
+from SEgli_01_Measurement import *
+
+show_measurement_formula_vs_iterative(0,300)
 
 """
 import matplotlib.pyplot as plt

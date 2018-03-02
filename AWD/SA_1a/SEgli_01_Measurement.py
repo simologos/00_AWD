@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from IPython.core.pylabtools import figsize
-from SEgli_01 import *
+from SEgli_01_Fibonacci import *
 
 """
 Semesterarbeit Teil 1a - Plot runtime analyse using mathplotlib
